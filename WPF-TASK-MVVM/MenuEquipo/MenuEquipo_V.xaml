@@ -1,0 +1,90 @@
+﻿<UserControl x:Class="Wpf_Task_Mvvm.MenuEquipo.MenuEquipo_V"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Wpf_Task_Mvvm.MenuEquipo"
+             mc:Ignorable="d" 
+             Background="White" MinHeight="570" MinWidth="960" >
+
+    <Grid x:Name="grdPrincipal">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="87"/>
+            <RowDefinition Height="99"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="39"/>
+            <RowDefinition Height="36"/>
+            <RowDefinition Height="31"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblOpciones" Content="--- OPCIONES ---" VerticalAlignment="Center" Height="87" FontFamily="Bahnschrift" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.508,-0.011" Background="Black" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Label x:Name="lblEquipos" Content="--- EQUIPOS ---" VerticalAlignment="Center" Height="92" FontFamily="Bahnschrift" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.508,-0.011" Background="Black" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Grid.Row="2"/>
+
+
+        <Grid x:Name="grdBotones" Grid.Row="1" Height="95" VerticalAlignment="Top">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="194*"/>
+                <ColumnDefinition Width="252*"/>
+                <ColumnDefinition Width="279*"/>
+                <ColumnDefinition Width="253*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button x:Name="btnVerEquipo" Content="VER EQUIPO" Command="{Binding VerEquipoCommand}" Grid.Column="0" Foreground="White" FontFamily="Bahnschrift" FontSize="22" FontWeight="Bold" Cursor="Hand" Margin="11,10,10,10" Style="{StaticResource CurvedButtonStyle}"/>
+
+            <Button x:Name="btnAgregarEquipo" Content="AGREGAR EQUIPO" Command="{Binding AgregarEquipoCommand}" Grid.Column="1" Foreground="White" FontFamily="Bahnschrift" FontSize="22" FontWeight="Bold" Cursor="Hand" Margin="10,10,10,10" Style="{StaticResource CurvedButtonStyle}"/>
+
+            <Button x:Name="btnActualizarEquipo" Content="ACTUALIZAR EQUIPO" Command="{Binding ActualizarEquipoCommand}" Grid.Column="2" Foreground="White" FontFamily="Bahnschrift" FontSize="22" FontWeight="Bold" Cursor="Hand" Margin="10,10,10,10" Style="{StaticResource CurvedButtonStyle}"/>
+
+            <Button x:Name="btnEliminarEquipo" Content="ELIMINAR EQUIPO" Command="{Binding EliminarEquipoCommand}" Grid.Column="3" Foreground="White" FontFamily="Bahnschrift" FontSize="22" FontWeight="Bold" Cursor="Hand" Margin="10,10,10,10" Style="{StaticResource CurvedButtonStyle}"/>
+
+        </Grid>
+
+        <Label x:Name="lblBuscador" Content="* Busqueda por nombre del Equipo :" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Center" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="16" Margin="10,0,0,0" Height="30" Width="267"/>
+
+        <Grid x:Name="grdBusqueda" Grid.Row="4">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="146*"/>
+                <ColumnDefinition Width="17*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBox x:Name="txtBusquedaEquipo" TextWrapping="Wrap" Text="{Binding FiltroEquipo, UpdateSourceTrigger=PropertyChanged}" VerticalAlignment="Top" Height="28" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="16" BorderBrush="Black" BorderThickness="2,2,2,2" MaxLength="40" Padding="5,3,0,0" Margin="24,0,10,0"  Style="{StaticResource CurvedTextBoxStyle}"/>
+
+            <Button x:Name="btnRecargar" Grid.Column="1" Command="{Binding RecargarDatosCommand}" HorizontalAlignment="Right" Margin="0,-26,10,0" VerticalAlignment="Top" Height="54" Width="58" Cursor="Hand" Style="{StaticResource CurvedButtonStyle}">
+
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/icono_recarga_app_csarp.png" Width="40" Height="40"/>
+                    </StackPanel>
+                </Button.Content>
+
+            </Button>
+
+        </Grid>
+
+        <StackPanel x:Name="stkTotalEquipos" Grid.Row="5" Orientation="Horizontal">
+
+            <Label x:Name="lblTotalEquipos" Content="* Total de Equipos :" Grid.Row="5" VerticalAlignment="Center" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="16" Margin="10,0,0,0" Height="30" Width="146"/>
+
+            <Label x:Name="lblNumTotalEquipos" Content="{Binding TotalEquipos}" Grid.Row="5" VerticalAlignment="Center" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="16" Margin="0,0,0,0" Height="30" Width="91" RenderTransformOrigin="-0.182,0.517"/>
+
+        </StackPanel>
+
+        <DataGrid x:Name="dgwDatos" Grid.Row="6" ItemsSource="{Binding DatosGridView}" SelectedItem="{Binding EquipoSeleccionado, Mode=TwoWay}" AutoGenerateColumns="False" CanUserAddRows="False" Margin="10,0,10,10" FontFamily="Bahnschrift" FontWeight="Bold" FontSize="20" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  HeadersVisibility="Column"  ColumnWidth="*" Cursor="Hand">
+
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
+                <DataGridTextColumn Header="NOMBRE" Binding="{Binding Nombre}" />
+                <DataGridTextColumn Header="LIGA" Binding="{Binding Liga}" />
+                <DataGridTextColumn Header="TOTAL JUGADORES" Binding="{Binding TotalJugadores}" />
+            </DataGrid.Columns>
+
+        </DataGrid>
+
+
+
+    </Grid>
+
+</UserControl>

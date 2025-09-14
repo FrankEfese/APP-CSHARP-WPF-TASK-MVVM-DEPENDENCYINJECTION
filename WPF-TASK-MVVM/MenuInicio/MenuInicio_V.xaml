@@ -1,0 +1,69 @@
+﻿<UserControl x:Class="Wpf_Task_Mvvm.MenuInicio.MenuInicio_V"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Wpf_Task_Mvvm.MenuInicio"
+             mc:Ignorable="d" 
+             Background="White" MinHeight="570" MinWidth="960">
+
+
+    <Grid x:Name="grdPrincipal">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="79*"/>
+            <RowDefinition Height="371*"/>
+        </Grid.RowDefinitions>
+
+        <Label x:Name="lblEstadisticas" Content="--- ESTADISTICAS ---" VerticalAlignment="Top" Height="103" FontFamily="Bahnschrift" FontSize="36" FontWeight="Bold" RenderTransformOrigin="0.508,-0.011" Background="Black" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Grid x:Name="grdEstadisticas" Grid.Row="1">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+
+            <Border Background="Black" BorderThickness="0" CornerRadius="15" Margin="30,12,30,12" VerticalAlignment="Center">
+
+                <Grid x:Name="grdTotalEquipos" Grid.Row="0" Background="Black" Margin="30,0,30,0" Height="110" VerticalAlignment="Center">
+
+                    <Label x:Name="lblTotalEquipos" Content="TOTAL DE EQUIPOS :" FontFamily="Bahnschrift" FontSize="40" FontWeight="Bold" RenderTransformOrigin="0.508,-0.011" Background="Black" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="-135,28,0,28" Width="374" HorizontalAlignment="Center"/>
+
+                    <Label x:Name="lblNumTotalEquipos"  Content="{Binding TotalEquipos}" FontFamily="Bahnschrift" FontSize="40" FontWeight="Bold" RenderTransformOrigin="0.508,-0.011" Background="Black" Foreground="White" VerticalContentAlignment="Center" Margin="428,28,0,28" HorizontalAlignment="Center" Width="188"/>
+
+
+                </Grid>
+
+            </Border>
+
+            <Border Background="Black" BorderThickness="0" Grid.Row="1" CornerRadius="15" Margin="30,12,30,12" VerticalAlignment="Center">
+
+                <Grid x:Name="grdTotalJugadores" Grid.Row="1" Background="Black" Margin="30,0,30,0" Height="110" VerticalAlignment="Center">
+
+                    <Label x:Name="lblTotalJugadores" Content="TOTAL DE JUGADORES :" FontFamily="Bahnschrift" FontSize="40" FontWeight="Bold" RenderTransformOrigin="0.508,-0.011" Background="Black" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="-140,28,0,28" HorizontalAlignment="Center" Width="455"/>
+
+                    <Label x:Name="lblNumTotalJugadores" Content="{Binding TotalJugadores}" FontFamily="Bahnschrift" FontSize="40" FontWeight="Bold" RenderTransformOrigin="0.508,-0.011" Background="Black" Foreground="White" VerticalContentAlignment="Center" Margin="480,28,0,28" HorizontalAlignment="Center" Width="186"/>
+
+                </Grid>
+
+            </Border>
+
+
+            <Border Background="Black" BorderThickness="0" Grid.Row="2" CornerRadius="15" Margin="30,14,30,10" VerticalAlignment="Center">
+
+                <Grid x:Name="grdTotalJugadoresParados" Grid.Row="2" Background="Black" Margin="30,0,30,0" Height="110" VerticalAlignment="Center">
+
+                    <Label x:Name="lblTotalJugadoresParados" Content="TOTAL DE JUGADORES PARADOS :" FontFamily="Bahnschrift" FontSize="40" FontWeight="Bold" RenderTransformOrigin="0.508,-0.011" Background="Black" Foreground="White" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="-130,28,0,28" HorizontalAlignment="Center" Width="622"/>
+
+                    <Label x:Name="lblNumTotalJugadoresParados" Content="{Binding TotalJugadoresParados}" FontFamily="Bahnschrift" FontSize="40" FontWeight="Bold" RenderTransformOrigin="0.508,-0.011" Background="Black" Foreground="White" VerticalContentAlignment="Center" Margin="628,28,0,27" HorizontalAlignment="Center" Width="142"/>
+
+                </Grid>
+
+            </Border>
+
+        </Grid>
+
+    </Grid>
+
+</UserControl>

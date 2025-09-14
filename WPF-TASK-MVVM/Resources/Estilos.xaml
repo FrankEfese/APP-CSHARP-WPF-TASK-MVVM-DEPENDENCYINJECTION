@@ -1,0 +1,105 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit">
+
+
+    <!-- Estilo para Botones Curvos -->
+    <Style x:Key="CurvedButtonStyle" TargetType="Button">
+        <Setter Property="Background" Value="Black"/>
+        <!-- Color de fondo predeterminado -->
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="Padding" Value="10,5"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <!-- Para cambiar el cursor al pasar por encima -->
+
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" 
+                        BorderBrush="{TemplateBinding BorderBrush}" 
+                        BorderThickness="{TemplateBinding BorderThickness}" 
+                        CornerRadius="20">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Style.Triggers>
+            <!-- Trigger para cambiar el color de fondo al pasar el ratón -->
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="LightGray"/>
+                <!-- Color al pasar el ratón -->
+            </Trigger>
+
+            <!-- Trigger para cambiar el color de fondo cuando el botón es presionado -->
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background" Value="DarkGray"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <!-- Estilo para TextBox Curvo -->
+    <Style x:Key="CurvedTextBoxStyle" TargetType="TextBox">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBox">
+                    <Border Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="10">
+                        <ScrollViewer Margin="0" x:Name="PART_ContentHost"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!-- Estilo para Spinner -->
+    <Style TargetType="xctk:IntegerUpDown" x:Key="CurvedIntegerUpDownStyle">
+        <Setter Property="Background" Value="White"/>
+        <Setter Property="BorderBrush" Value="Black"/>
+        <Setter Property="BorderThickness" Value="2"/>
+        <Setter Property="FontFamily" Value="Bahnschrift"/>
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+    </Style>
+
+
+    <!-- Estilo para Grid -->
+    <Style TargetType="Grid" x:Key="GradientBackgroundGridStyle">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                    <GradientStop Color="#FF097D09" Offset="0.0"/>
+                    <!-- Verde oscuro -->
+                    <GradientStop Color="#000000" Offset="1.0"/>
+                    <!-- Negro -->
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    <!-- Estilo para ContentControl -->
+    <Style TargetType="ContentControl" x:Key="GoldenBorderContentControlStyle">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ContentControl">
+                    <Border BorderBrush="Black" 
+                        BorderThickness="4"  
+                        Background="{TemplateBinding Background}">
+                        <ContentPresenter />
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+    
+
+</ResourceDictionary>

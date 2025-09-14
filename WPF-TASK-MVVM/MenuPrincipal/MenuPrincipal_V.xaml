@@ -1,0 +1,93 @@
+﻿<Window x:Class="Wpf_Task_Mvvm.MenuPrincipal.MenuPrincipal_V"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Wpf_Task_Mvvm.MenuPrincipal"
+        mc:Ignorable="d"
+        Title="MENU PRINCIPAL" Height="750" Width="1350" MinHeight="750" MinWidth="1350" WindowStartupLocation="CenterScreen" Background="SeaGreen">
+
+
+    <Grid x:Name="grdPrincipal" Style="{StaticResource GradientBackgroundGridStyle}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="339"/>
+            <ColumnDefinition Width="30*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <Grid x:Name="grdOpciones">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="115*"/>
+                <RowDefinition Height="252*"/>
+            </Grid.RowDefinitions>
+
+
+            <Image x:Name="imgLogo" Margin="30,10,30,10" Source="/Resources/logo_login_app_csarp.png" Stretch="Fill"/>
+
+
+
+            <Border BorderBrush="Black" BorderThickness="4" Grid.Row="1" Margin="30,3,30,30">
+
+                <StackPanel x:Name="stkBotones" Grid.Row="1" Background="White">
+
+                    <Label x:Name="lblMenu" Content="MENU" Height="41" Width="104" FontFamily="Bahnschrift" FontSize="35" FontWeight="Bold" RenderTransformOrigin="0.508,-0.011" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" Margin="0,20,0,0"/>
+
+                    <Separator Height="10" Background="Black" Width="250" BorderBrush="Black"/>
+
+                    <Button x:Name="btnMenuInicio" Command="{Binding MenuInicioCommand}" Foreground="White" FontFamily="Bahnschrift" FontSize="26" FontWeight="Bold" Cursor="Hand" Height="60" Width="249" Margin="0,20,0,0" Style="{StaticResource CurvedButtonStyle}">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Resources/icono_casa_app_csarp.png" Width="40" Height="40" Margin="5,5,25,5"/>
+                                <TextBlock Text="INICIO" VerticalAlignment="Center" Width="119"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+
+                    <Button x:Name="btnMenuEquipo" Command="{Binding MenuEquipoCommand}" Foreground="White" FontFamily="Bahnschrift" FontSize="26" FontWeight="Bold" Cursor="Hand" Height="60" Width="249" Margin="0,20,0,0" Style="{StaticResource CurvedButtonStyle}">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Resources/icono_escudo_app_csarp.png" Width="40" Height="40" Margin="5,5,25,5"/>
+                                <TextBlock Text="EQUIPOS" VerticalAlignment="Center" Width="119"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+
+                    <Button x:Name="btnMenuJugador" Command="{Binding MenuJugadorCommand}" Foreground="White" FontFamily="Bahnschrift" FontSize="26" FontWeight="Bold" Cursor="Hand" Height="60" Width="249" Margin="0,20,0,0" Style="{StaticResource CurvedButtonStyle}">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/Resources/icono_jugador_app_csarp.png" Width="40" Height="40" Margin="5,5,25,5"/>
+                                <TextBlock Text="JUGADORES" VerticalAlignment="Center" Width="154"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </StackPanel>
+            </Border>
+
+            <Button x:Name="btnSalir" Command="{Binding SalirCommand}" Grid.Row="1" Foreground="White" FontFamily="Bahnschrift" FontSize="26" FontWeight="Bold" Cursor="Hand" Width="249" Margin="45,0,45,47" Height="60" VerticalAlignment="Bottom" Style="{StaticResource CurvedButtonStyle}">
+
+                <Button.Content>
+                    <StackPanel Orientation="Horizontal">
+                        <Image Source="/Resources/icono_cerrar_app_csarp.png" Width="40" Height="40" Margin="5,5,25,5"/>
+                        <TextBlock Text="SALIR" VerticalAlignment="Center" Width="119"/>
+                    </StackPanel>
+                </Button.Content>
+
+            </Button>
+
+
+        </Grid>
+
+
+        <Grid x:Name="grdContenedor" Grid.Column="1">
+
+            <ContentControl x:Name="contContenedor" Content="{Binding Content}" Margin="0,30,30,30" Background="White" Style="{StaticResource GoldenBorderContentControlStyle}"/>
+
+        </Grid>
+
+
+
+    </Grid>
+
+
+</Window>

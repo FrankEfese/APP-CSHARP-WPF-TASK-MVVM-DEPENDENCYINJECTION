@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup />
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Login\Login_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuEquipo\MenuEquipo_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuEquipo\OpcionesEquipo\ActualizarEquipo\ActualizarEquipo_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuEquipo\OpcionesEquipo\AgregarEquipo\AgregarEquipo_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuEquipo\OpcionesEquipo\VerEquipo\VerEquipo_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuInicio\MenuInicio_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuJugador\MenuJugador_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuJugador\OpcionesJugador\ActualizarJugador\ActualizarJugador_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuJugador\OpcionesJugador\AgregarJugador\AgregarJugador_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuJugador\OpcionesJugador\VerJugador\VerJugador_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MenuPrincipal\MenuPrincipal_V.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Resources\Estilos.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
